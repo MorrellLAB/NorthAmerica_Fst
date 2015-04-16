@@ -10,10 +10,17 @@ import sys
 samples = []
 genotypes = []
 with open(sys.argv[1], 'r') as f:
-    for line in f:
-        tmp = line.strip().split('\t')
-        samples.append(tmp[0])
-        genotypes.append(tmp[1:])
+    for index, line in enumerate(f):
+        if index == 0:
+            continue
+        else:
+            tmp = line.strip().split('\t')
+            samples.append(tmp[0])
+            #   Replace the diploid genotypes with haploid ones
+            hap_gt = [list(set(a))[0] if len(set(a))==1 else 'N' for a in tmp[5:]]
+            #   Then, replaces the 'B' with 'C'
+            hap_gt_nuc = ['C' if a=='B' else a for a in hap_gt]
+            genotypes.append(hap_gt_nuc)
 
 #   next we transpose the matrix so we can iterate over markers instead of
 #   individuals.
