@@ -9,6 +9,9 @@
 #   What is missing data called in our data frame?
 missing <- "NA"
 
+#   Take arguments
+args <- commandArgs(TRUE)
+
 #   Define some functions to help us calculate FIS for each group
 CalcFIS <- function(genotype)
 {
@@ -52,36 +55,37 @@ CalcFIS <- function(genotype)
 #       Row Type (2 or 6)
 #       CAP Year
 #       Growth Habit (Winter or Spring)
-all_breeding <- read.table('NORTH_AMERICAN_QC_3453samples_2396snp.txt', header=T, stringsAsFactors=F)
+all_breeding <- read.table(args[1], header=T, stringsAsFactors=F)
 
 #   Separate them by breeding program and row type
-AB.2row <- all_breeding[which(all_breeding$BP_Code == "AB" & all_breeding$Row_Type == 2),]
-AB.6row <- all_breeding[which(all_breeding$BP_Code == "AB" & all_breeding$Row_Type == 6),]
+AB.2row <- all_breeding[which(all_breeding$Program == "AB" & all_breeding$Row_type == 2),]
+AB.6row <- all_breeding[which(all_breeding$Program == "AB" & all_breeding$Row_type == 6),]
 
-BA.2row <- all_breeding[which(all_breeding$BP_Code == "BA" & all_breeding$Row_Type == 2),]
-BA.6row <- all_breeding[which(all_breeding$BP_Code == "BA" & all_breeding$Row_Type == 6),]
+BA.2row <- all_breeding[which(all_breeding$Program == "BA" & all_breeding$Row_type == 2),]
+BA.6row <- all_breeding[which(all_breeding$Program == "BA" & all_breeding$Row_type == 6),]
+BAI <- all_breeding[which(all_breeding$Program == "BAI"),]
 
-MN.2row <- all_breeding[which(all_breeding$BP_Code == "MN" & all_breeding$Row_Type == 2),]
-MN.6row <- all_breeding[which(all_breeding$BP_Code == "MN" & all_breeding$Row_Type == 6),]
+MN.2row <- all_breeding[which(all_breeding$Program == "MN" & all_breeding$Row_type == 2),]
+MN.6row <- all_breeding[which(all_breeding$Program == "MN" & all_breeding$Row_type == 6),]
 
-MT.2row <- all_breeding[which(all_breeding$BP_Code == "MT" & all_breeding$Row_Type == 2),]
-MT.6row <- all_breeding[which(all_breeding$BP_Code == "MT" & all_breeding$Row_Type == 6),]
+MT.2row <- all_breeding[which(all_breeding$Program == "MT" & all_breeding$Row_type == 2),]
+MT.6row <- all_breeding[which(all_breeding$Program == "MT" & all_breeding$Row_type == 6),]
 
 #   Already separated by RT
-N2 <- all_breeding[which(all_breeding$BP_Code == "N2"),]
-N6 <- all_breeding[which(all_breeding$BP_Code == "N6"),]
+N2 <- all_breeding[which(all_breeding$Program == "N2"),]
+N6 <- all_breeding[which(all_breeding$Program == "N6"),]
 
-OR.2row <- all_breeding[which(all_breeding$BP_Code == "OR" & all_breeding$Row_Type == 2),]
-OR.6row <- all_breeding[which(all_breeding$BP_Code == "OR" & all_breeding$Row_Type == 6),]
+OR.2row <- all_breeding[which(all_breeding$Program == "OR" & all_breeding$Row_type == 2),]
+OR.6row <- all_breeding[which(all_breeding$Program == "OR" & all_breeding$Row_type == 6),]
 
-UT.2row <- all_breeding[which(all_breeding$BP_Code == "UT" & all_breeding$Row_Type == 2),]
-UT.6row <- all_breeding[which(all_breeding$BP_Code == "UT" & all_breeding$Row_Type == 6),]
+UT.2row <- all_breeding[which(all_breeding$Program == "UT" & all_breeding$Row_type == 2),]
+UT.6row <- all_breeding[which(all_breeding$Program == "UT" & all_breeding$Row_type == 6),]
 
-VT.2row <- all_breeding[which(all_breeding$BP_Code == "VT" & all_breeding$Row_Type == 2),]
-VT.6row <- all_breeding[which(all_breeding$BP_Code == "VT" & all_breeding$Row_Type == 6),]
+VT.2row <- all_breeding[which(all_breeding$Program == "VT" & all_breeding$Row_type == 2),]
+VT.6row <- all_breeding[which(all_breeding$Program == "VT" & all_breeding$Row_type == 6),]
 
-WA.2row <- all_breeding[which(all_breeding$BP_Code == "WA" & all_breeding$Row_Type == 2),]
-WA.6row <- all_breeding[which(all_breeding$BP_Code == "WA" & all_breeding$Row_Type == 6),]
+WA.2row <- all_breeding[which(all_breeding$Program == "WA" & all_breeding$Row_type == 2),]
+WA.6row <- all_breeding[which(all_breeding$Program == "WA" & all_breeding$Row_type == 6),]
 
 
 ### The following statements will throw some warnings, but that is just because
@@ -92,21 +96,23 @@ WA.6row <- all_breeding[which(all_breeding$BP_Code == "WA" & all_breeding$Row_Ty
 #   We get NAs in our FIS calculations when there are genotype classes that do
 #   not exist when we expect them to. For instance, if there are heterozygotes
 #   but one of the homozygote classes is 0
-AB.2row.FIS <- mean(apply(AB.2row[,9:ncol(AB.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
-AB.6row.FIS <- mean(apply(AB.6row[,9:ncol(AB.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
-BA.2row.FIS <- mean(apply(BA.2row[,9:ncol(BA.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
-BA.6row.FIS <- mean(apply(BA.6row[,9:ncol(BA.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
-MN.6row.FIS <- mean(apply(MN.6row[,9:ncol(MN.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
-MT.2row.FIS <- mean(apply(MT.2row[,9:ncol(MT.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
-N2.FIS <- mean(apply(N2[,9:ncol(N2)], 2, function(x) CalcFIS(x)), na.rm=T)
-N6.FIS <- mean(apply(N6[,9:ncol(N6)], 2, function(x) CalcFIS(x)), na.rm=T)
-OR.2row.FIS <- mean(apply(OR.2row[,9:ncol(OR.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
-OR.6row.FIS <- mean(apply(OR.6row[,9:ncol(OR.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
-UT.2row.FIS <- mean(apply(UT.2row[,9:ncol(UT.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
-UT.6row.FIS <- mean(apply(UT.6row[,9:ncol(UT.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
-VT.6row.FIS <- mean(apply(VT.6row[,9:ncol(VT.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
-WA.2row.FIS <- mean(apply(WA.2row[,9:ncol(WA.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
-WA.6row.FIS <- mean(apply(WA.6row[,9:ncol(WA.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+#   Slice off the first 5 columns, since they are not genotype data
+AB.2row.FIS <- mean(apply(AB.2row[,6:ncol(AB.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
+AB.6row.FIS <- mean(apply(AB.6row[,6:ncol(AB.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+BA.2row.FIS <- mean(apply(BA.2row[,6:ncol(BA.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
+BA.6row.FIS <- mean(apply(BA.6row[,6:ncol(BA.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+BAI.FIS <- mean(apply(BAI[,6:ncol(BA.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+MN.6row.FIS <- mean(apply(MN.6row[,6:ncol(MN.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+MT.2row.FIS <- mean(apply(MT.2row[,6:ncol(MT.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
+N2.FIS <- mean(apply(N2[,6:ncol(N2)], 2, function(x) CalcFIS(x)), na.rm=T)
+N6.FIS <- mean(apply(N6[,6:ncol(N6)], 2, function(x) CalcFIS(x)), na.rm=T)
+OR.2row.FIS <- mean(apply(OR.2row[,6:ncol(OR.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
+OR.6row.FIS <- mean(apply(OR.6row[,6:ncol(OR.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+UT.2row.FIS <- mean(apply(UT.2row[,6:ncol(UT.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
+UT.6row.FIS <- mean(apply(UT.6row[,6:ncol(UT.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+VT.6row.FIS <- mean(apply(VT.6row[,6:ncol(VT.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
+WA.2row.FIS <- mean(apply(WA.2row[,6:ncol(WA.2row)], 2, function(x) CalcFIS(x)), na.rm=T)
+WA.6row.FIS <- mean(apply(WA.6row[,6:ncol(WA.6row)], 2, function(x) CalcFIS(x)), na.rm=T)
 
 #   This is just for the sake of printing it nicely
 print(
@@ -115,6 +121,7 @@ print(
         AB.6Row=AB.6row.FIS,
         BA.2row=BA.2row.FIS,
         BA.6Row=BA.6row.FIS,
+        BAI=BAI.FIS,
         MN.6Row=MN.6row.FIS,
         MT.2row=MT.2row.FIS,
         N2=N2.FIS,

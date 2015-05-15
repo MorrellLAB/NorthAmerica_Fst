@@ -9,11 +9,13 @@
 #   What is missing data called in our data frame?
 missing <- "NA"
 
+#   Take arguments
+args <- commandArgs(TRUE)
 
 #   Rows are individuals and columns (from 6 until the end) are markers
 #   First Eight columns are
 #       Breeding Program
-#           AB BA MN MT N2 N6 OR UT VT WA
+#           AB BA BAI MN MT N2 N6 OR UT VT WA
 #       Sample ID
 #       D1 (??)
 #       D2 (??)
@@ -21,42 +23,44 @@ missing <- "NA"
 #       Row Type (2 or 6)
 #       CAP Year
 #       Growth Habit (Winter or Spring)
-all_breeding <- read.table('NORTH_AMERICAN_QC_3453samples_2396snp.txt', header=T, stringsAsFactors=F)
+all_breeding <- read.table(args[1], header=TRUE, stringsAsFactors=FALSE)
 
 #   Separate them by breeding program and row type
-AB.2row <- all_breeding[which(all_breeding$BP_Code == "AB" & all_breeding$Row_Type == 2),]
-AB.6row <- all_breeding[which(all_breeding$BP_Code == "AB" & all_breeding$Row_Type == 6),]
+AB.2row <- all_breeding[which(all_breeding$Program == "AB" & all_breeding$Row_type == 2),]
+AB.6row <- all_breeding[which(all_breeding$Program == "AB" & all_breeding$Row_type == 6),]
 
-BA.2row <- all_breeding[which(all_breeding$BP_Code == "BA" & all_breeding$Row_Type == 2),]
-BA.6row <- all_breeding[which(all_breeding$BP_Code == "BA" & all_breeding$Row_Type == 6),]
+BA.2row <- all_breeding[which(all_breeding$Program == "BA" & all_breeding$Row_type == 2),]
+BA.6row <- all_breeding[which(all_breeding$Program == "BA" & all_breeding$Row_type == 6),]
+BAI <- all_breeding[which(all_breeding$Program == "BAI"),]
 
-MN.2row <- all_breeding[which(all_breeding$BP_Code == "MN" & all_breeding$Row_Type == 2),]
-MN.6row <- all_breeding[which(all_breeding$BP_Code == "MN" & all_breeding$Row_Type == 6),]
+MN.2row <- all_breeding[which(all_breeding$Program == "MN" & all_breeding$Row_type == 2),]
+MN.6row <- all_breeding[which(all_breeding$Program == "MN" & all_breeding$Row_type == 6),]
 
-MT.2row <- all_breeding[which(all_breeding$BP_Code == "MT" & all_breeding$Row_Type == 2),]
-MT.6row <- all_breeding[which(all_breeding$BP_Code == "MT" & all_breeding$Row_Type == 6),]
+MT.2row <- all_breeding[which(all_breeding$Program == "MT" & all_breeding$Row_type == 2),]
+MT.6row <- all_breeding[which(all_breeding$Program == "MT" & all_breeding$Row_type == 6),]
 
 #   Already separated by RT
-N2 <- all_breeding[which(all_breeding$BP_Code == "N2"),]
-N6 <- all_breeding[which(all_breeding$BP_Code == "N6"),]
+N2 <- all_breeding[which(all_breeding$Program == "N2"),]
+N6 <- all_breeding[which(all_breeding$Program == "N6"),]
 
-OR.2row <- all_breeding[which(all_breeding$BP_Code == "OR" & all_breeding$Row_Type == 2),]
-OR.6row <- all_breeding[which(all_breeding$BP_Code == "OR" & all_breeding$Row_Type == 6),]
+OR.2row <- all_breeding[which(all_breeding$Program == "OR" & all_breeding$Row_type == 2),]
+OR.6row <- all_breeding[which(all_breeding$Program == "OR" & all_breeding$Row_type == 6),]
 
-UT.2row <- all_breeding[which(all_breeding$BP_Code == "UT" & all_breeding$Row_Type == 2),]
-UT.6row <- all_breeding[which(all_breeding$BP_Code == "UT" & all_breeding$Row_Type == 6),]
+UT.2row <- all_breeding[which(all_breeding$Program == "UT" & all_breeding$Row_type == 2),]
+UT.6row <- all_breeding[which(all_breeding$Program == "UT" & all_breeding$Row_type == 6),]
 
-VT.2row <- all_breeding[which(all_breeding$BP_Code == "VT" & all_breeding$Row_Type == 2),]
-VT.6row <- all_breeding[which(all_breeding$BP_Code == "VT" & all_breeding$Row_Type == 6),]
+VT.2row <- all_breeding[which(all_breeding$Program == "VT" & all_breeding$Row_type == 2),]
+VT.6row <- all_breeding[which(all_breeding$Program == "VT" & all_breeding$Row_type == 6),]
 
-WA.2row <- all_breeding[which(all_breeding$BP_Code == "WA" & all_breeding$Row_Type == 2),]
-WA.6row <- all_breeding[which(all_breeding$BP_Code == "WA" & all_breeding$Row_Type == 6),]
+WA.2row <- all_breeding[which(all_breeding$Program == "WA" & all_breeding$Row_type == 2),]
+WA.6row <- all_breeding[which(all_breeding$Program == "WA" & all_breeding$Row_type == 6),]
 
 #   Write the tables out
 write.table(AB.2row, "AB_2Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
 write.table(AB.6row, "AB_6Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
 write.table(BA.2row, "BA_2Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
 write.table(BA.6row, "BA_6Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
+write.table(BAI, "BAI.txt", quote=FALSE, sep="\t", row.names=FALSE)
 write.table(MN.6row, "MN_6Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
 write.table(MT.2row, "MT_2Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
 write.table(N2, "ND_2Row.txt", quote=FALSE, sep="\t", row.names=FALSE)
