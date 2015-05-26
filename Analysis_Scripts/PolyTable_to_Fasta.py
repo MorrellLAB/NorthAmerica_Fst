@@ -17,7 +17,7 @@ with open(sys.argv[1], 'r') as f:
             tmp = line.strip().split('\t')
             samples.append(tmp[0])
             #   Replace the diploid genotypes with haploid ones
-            hap_gt = [list(set(a))[0] if len(set(a))==1 else 'N' for a in tmp[5:]]
+            hap_gt = [list(set(a))[0] if len(set(a))==1 else 'N' for a in tmp[1:]]
             #   Then, replaces the 'B' with 'C'
             hap_gt_nuc = ['C' if a=='B' else a for a in hap_gt]
             genotypes.append(hap_gt_nuc)
