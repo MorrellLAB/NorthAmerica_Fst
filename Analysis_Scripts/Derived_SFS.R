@@ -109,7 +109,7 @@ pdf(file=filename_2row, 10, 6)
 #   Plot the data
 plt <- barplot(
     t(sfs_data_2row),
-    ylim=c(0, 0.5),
+    ylim=c(0, 0.70),
     beside=TRUE,
     axisnames=F,
     xlab="Derived Allele Frequency",
@@ -144,7 +144,7 @@ pdf(file=filename_2row, 10, 6)
 #   Plot the data
 plt <- barplot(
     t(sfs_data_2row),
-    ylim=c(0, 0.5),
+    ylim=c(0, 0.70),
     beside=TRUE,
     axisnames=F,
     xlab="Derived Allele Frequency",
@@ -154,7 +154,7 @@ plt <- barplot(
     )
 barplot(
     t(sfs_data_2row),
-    ylim=c(0, 0.5),
+    ylim=c(0, 0.70),
     beside=TRUE,
     axisnames=F,
     density=c(8, 8, 8, 8, 32, 32, 32, 32),
@@ -221,7 +221,7 @@ pdf(file=filename_6row, 10, 6)
 #   Plot the data
 plt <- barplot(
     t(sfs_data_6row),
-    ylim=c(0, 0.5),
+    ylim=c(0, 0.70),
     beside=TRUE,
     axisnames=F,
     xlab="Derived Allele Frequency",
@@ -256,7 +256,7 @@ pdf(file=filename_6row, 10, 6)
 #   Plot the data
 plt <- barplot(
     t(sfs_data_6row),
-    ylim=c(0, 0.5),
+    ylim=c(0, 0.70),
     beside=TRUE,
     axisnames=F,
     xlab="Derived Allele Frequency",
@@ -266,7 +266,7 @@ plt <- barplot(
     )
 barplot(
     t(sfs_data_6row),
-    ylim=c(0, 0.5),
+    ylim=c(0, 0.70),
     beside=TRUE,
     axisnames=F,
     density=c(8, 8, 8, 8, 32, 32, 32, 32),
@@ -290,14 +290,14 @@ axis(
 #   Add a legend
 legend(
     "topright",
-    labels_2row,
+    labels_6row,
     fill=c("#FFFFFF", "#BBBBBB", "#444444", "#000000"),
     cex=1.25,
     ncol=2
     )
 legend(
     "topright",
-    labels_2row,
+    labels_6row,
     density=c(8, 8, 8, 8, 32, 32, 32, 32),
     angle=c(0, 45, 0, 135),
     fill=c("#333333", "#333333", "#CCCCCC", "#CCCCCC"),
@@ -334,7 +334,7 @@ dev.off()
 # #   Plot the data
 # plt <- barplot(
 #     t(sfs_data),
-#     ylim=c(0, 0.5),
+#     ylim=c(0, 0.70),
 #     beside=TRUE,
 #     axisnames=F,
 #     xlab="Derived Allele Frequency",
