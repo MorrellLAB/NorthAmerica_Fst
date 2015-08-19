@@ -2,15 +2,49 @@
 #   column of derived allele frequencies.
 
 #   These are the "Set1" Colors from the RColorBrewer package with 8 levels
-colors <- c(
-    "#E41A1C",
-    "#377EB8",
-    "#4DAF4A",
-    "#984EA3",
-    "#FF7F00",
-    "#FFFF33",
-    "#A65628",
-    "#F781BF"
+# colors <- c(
+#     "#E41A1C",
+#     "#377EB8",
+#     "#4DAF4A",
+#     "#984EA3",
+#     "#FF7F00",
+#     "#FFFF33",
+#     "#A65628",
+#     "#F781BF"
+#     )
+
+#   Define a set of colors from AP to match the Nicholson plots
+idaho <- "blue"
+busch_ag <- "dark green"
+busch_ag_int <- "green"
+minnesota <- "maroon"
+montana <- "grey"
+northdakota <- "purple"
+utah <- "cyan"
+washington <- "orange"
+oregon <- "yellow"
+virginia <- "red"
+
+tworow_colors <- c(
+    idaho,
+    busch_ag_int,
+    busch_ag,
+    montana,
+    northdakota,
+    oregon,
+    utah,
+    washington
+    )
+
+sixrow_colors <- c(
+    idaho,
+    busch_ag,
+    minnesota,
+    northdakota,
+    oregon,
+    utah,
+    virginia,
+    washington
     )
 
 #   A function to create bins by MAF and count how many markers fall in
@@ -114,7 +148,7 @@ plt <- barplot(
     axisnames=F,
     xlab="Derived Allele Frequency",
     ylab="Proportion",
-    col=colors,
+    col=tworow_colors,
     space=c(0, 2)
     )
 #   Get labels for the x-axis tick marks
@@ -133,7 +167,7 @@ axis(
 legend(
     "topright",
     labels_2row,
-    fill=colors,
+    fill=tworow_colors,
     cex=1.0
     )
 dev.off()
@@ -226,7 +260,7 @@ plt <- barplot(
     axisnames=F,
     xlab="Derived Allele Frequency",
     ylab="Proportion",
-    col=colors,
+    col=sixrow_colors,
     space=c(0, 2)
     )
 #   Get labels for the x-axis tick marks
@@ -245,7 +279,7 @@ axis(
 legend(
     "topright",
     labels_6row,
-    fill=colors,
+    fill=sixrow_colors,
     cex=1.0
     )
 dev.off()
