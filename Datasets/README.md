@@ -12,15 +12,14 @@ Sample_information_FULL.csv: All samples' information downloaded from T3 website
 
 
 Barley_NorthAm_QC_AB_no_duplicates_or.txt  (and Barley_NorthAm_QC_ACTG_no_duplicates_or.txt): 
-Genotype file (for genotypes and nucleotides) after QC controling for >25% missingness, duplicated 
+Genotype file (for genotypes and nucleotides) after QC controling for >25% missingness, >6.25% heterozygosity, duplicated 
 individuals and missing information (row type, growth habit) and removal of single samples representing a population.
 from this population. SNPs are sorted by their genetic map position according to Munoz et al 2011. Total individuals 3,613 x 2,542 SNPs
 
 
-Barley_Annotations.txt : SNP annotations using SNP contextual sequences compared to a barley sequence to infer their position. We used SNPmeta (Kono et al., 2014) to obtain this information.
-Customized R script (SortingSNPs_genMapOrder.R) was used to order the SNPs into a genetic map position. This file will be use in Fst and PHS analysis.
+Barley_Annotations.txt : SNP annotations using SNP contextual sequences compared to a barley sequence to find their position, gene location, state of the variant (synonymous, non-synonymous, coding, non-coding). We used SNPmeta (Kono et al., 2014) to obtain this information.
 
-Fang_et_al_TableS3.txt: From Fang et al 2014, got H.Bulbosum states to be used as ancestral states.
+Fang_et_al_TableS3.txt: From Fang et al 2014, we got H.Bulbosum states to be used as ancestral states.
 
 GeneticMap_T3_020315.txt: BOPA SNPs genetic map (Munoz et. al., 2011) downloaded from T3 for 2,994 SNPs.
 
