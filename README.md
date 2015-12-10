@@ -5,6 +5,6 @@ Journal: Genes Genomes Genetics
 Authors: Ana M. Poets, Mohsen Mohammadi, Kiran Seth, Hongyun Wang, Thomas J. Y. Kono, Zhou Fang, Gary J. Muehlbauer, Kevin P. Smith, and Peter L. Morrell
 Article URL:
 
-This repository contains the [datasets](Datasets) and scripts used for [data analysis](Scrips/Analysis_Scripts) and [figures](Scripts/Figures_Scripts) plotted in our paper.
+This repository contains the [datasets](Datasets) and [scripts](Scripts) used for [data analysis](Scripts/Analysis_Scripts) and [figures](Scripts/Figures_Scripts) plotted in our paper.
 
 
