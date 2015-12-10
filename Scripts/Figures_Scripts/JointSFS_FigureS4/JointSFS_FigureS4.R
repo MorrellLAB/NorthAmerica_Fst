@@ -1,4 +1,4 @@
-###Code by Zhou Fang designed to estimate and plot (Figure S4) derived SFS and joint two SFS comparing spike types or growth habit types.
+###Estimate and plot (Figure S4) derived SFS and joint two SFS comparing spike types or growth habit types.
 
 rm(list=ls())
 

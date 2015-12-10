@@ -6,9 +6,12 @@
 
 
 rm(list=ls())
-genotype <-read.table("Barley_NorthAm_QC_AB_no_duplicates_or.txt",header=T,row.names=1)
-genmap<-read.table("~/Documents/Anita/mohsen_fst/Data/T3_download_04272015/GeneticMap_T3_020315",header=T)
 
+##INPUT FILES: from Datasets directory
+genotype <-read.table("Barley_NorthAm_QC_AB_no_duplicates_or.txt",header=T,row.names=1)
+genmap<-read.table("GeneticMap_T3_020315",header=T)
+
+##FILE FORMATTING:
 #Sort SNPs by genetic position
 genmap_or<-genmap[order(genmap$SNP),]
 
@@ -72,14 +75,14 @@ SNP_file<-cbind(as.data.frame(GENOTYPE_READY[,1]),as.data.frame(CHR_names), as.d
 colnames(SNP_file)<-c("SNP_name","Chromosome","cM","Position","Reference_mino","Reference_major")
 
 #print out .snp file
-write.table(SNP_file,"~/Documents/Anita/mohsen_fst/Analysis/for_smartPCA/NorthAm.snp",quote=F,row.names=F,col.names=F,sep="\t")
+write.table(SNP_file,"NorthAm.snp",quote=F,row.names=F,col.names=F,sep="\t")
 
 ## 2. Create Sample.ind
 Samples_ind<-cbind(as.data.frame(colnames(genotypes_or)), as.data.frame(rep('U',dim(genotypes_or)[2])), as.data.frame(rep(1,dim(genotypes_or)[2])))
 colnames(Samples_ind)<-c("SampleID","Gender","pop_group")
 
 #print out .ind file
-write.table(Samples_ind,"~/Documents/Anita/mohsen_fst/Analysis/for_smartPCA/NorthAm.ind",quote=F,row.names=F,col.names=F,sep="\t")
+write.table(Samples_ind,"NorthAm.ind",quote=F,row.names=F,col.names=F,sep="\t")
 
 ## 3. Create Genotype.eigenstratgeno
 COUNT_ALLELE<-function(dat){
@@ -118,7 +121,7 @@ Genotype_counts<-as.data.frame(t(RESULT))
 row.names(Genotype_counts)<-GENOTYPE_READY$SNP
 colnames(Genotype_counts)<-colnames(GENOTYPE_READY[,7:(dim(GENOTYPE_READY)[2])])
 
-write.table(Genotype_counts,"~/Documents/Anita/mohsen_fst/Analysis/for_smartPCA/NorthAm2.eigenstratgeno",quote=F,row.names=F,col.names=F,sep="")
+write.table(Genotype_counts,"NorthAm2.eigenstratgeno",quote=F,row.names=F,col.names=F,sep="")
 
 #Now use the files as input files for smartPCA in the command line using smartpca from the package Eigensatat. Using a par file containing the parameters used
 #Par file
