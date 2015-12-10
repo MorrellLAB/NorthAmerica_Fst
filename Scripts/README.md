@@ -1,4 +1,4 @@
-Code for Analysis and Figures
+Code for Analyses and Figures
 ==============================
 
 Scripts names make reference to the terminology used in the paper.
