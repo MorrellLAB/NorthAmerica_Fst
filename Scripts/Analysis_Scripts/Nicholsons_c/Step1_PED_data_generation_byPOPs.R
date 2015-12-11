@@ -1,4 +1,10 @@
-#Convert genotype file into .PED format for Nicholson Fst input data generation. Separating spring vs winter and 2 from 6 rows phenotypes
+#Title           :Step1_PED_data_generation_byPOPs.R
+#Description     :Convert genotype file into .PED format for Nicholson Fst input data generation. 
+#			      Separating spring vs winter and 2 from 6 rows phenotypes
+#Author		 	 :A. Poets
+#Date			 :May 5, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
 
 rm(list=ls())
 

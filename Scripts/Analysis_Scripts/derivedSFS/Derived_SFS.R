@@ -1,5 +1,9 @@
-#   Create a derived site frequency spectrum from a file containing a single
-#   column of derived allele frequencies.
+
+#Title           :Derived_SFS.R  
+#Description     :Create a derived site frequency spectrum from a file containing a single
+#   			  column of derived allele frequencies.
+#Author		 	 :T. Kono
+#========================================================================================
 
 #   These are the "Set1" Colors from the RColorBrewer package with 8 levels
 # colors <- c(

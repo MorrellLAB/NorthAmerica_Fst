@@ -1,9 +1,19 @@
 #!/usr/bin/env python
 import sys
+
+"""
+#Title           :Step2_Change_names.py 
+#Description     :Change the name of genotype files downloaded from www.triticeaetoolbox.org
+#			      to Alias representing the breeding program and the number of individual in it.
+#Author		 	 :A. Poets 
+#Note		     :The aliases assigned at this point will be use in all the analyses.
+#========================================================================================
+
+"""
 Usage = """
-Change the name of genotype files for CAP names.
-Read starndard input. Two files are required:
-1)The first one is the genotypes with SNPs as header, and samples as rows.
+
+Read standar input. Two files are required:
+1)The first one is the matrix of genotypes with SNPs as header, and samples as rows.
 2)The second file contain a list of names, 1st column the new names (short),
 2nd has the long names from T3
 

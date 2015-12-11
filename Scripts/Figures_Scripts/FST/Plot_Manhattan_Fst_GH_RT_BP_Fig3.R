@@ -1,4 +1,8 @@
-#Fst MANHATTAN PLOTS
+#Title           :Plot_Manhattan_Fst_GH_RT_BP_Fig3.R 
+#Description     :Make manhattan plots for Fst values as in Figure 3
+#Author		 	 :A. Poets 
+#========================================================================================
+
 rm(list=ls())
 
 ##INPUT FILES: Genetic map and annotations are in Datasets directory.

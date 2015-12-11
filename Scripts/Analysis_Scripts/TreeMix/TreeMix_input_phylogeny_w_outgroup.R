@@ -1,4 +1,10 @@
-#Estimate the relationship among the data set (spring,winter, two, six rows) using treeMix 
+#Title           :TreeMix_input_phylogeny_w_outgroup.R 
+#Description     :Format input to estimate the relationship among the data set 
+#				  (spring,winter, two, six rows) using treeMix  TreeMix (Pickrell and Pritchard 2012)
+#Author		 	 :A. Poets 
+#Note		     :Required diploid genotyping data and an outgroup
+#========================================================================================
+
 
 rm(list=ls())
 

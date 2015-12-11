@@ -1,5 +1,9 @@
-#Code to make histograms of Fst distributions.
-#Input files are the resutls from Fst_six_two_row.R, Fst_winter_spring.r, Fst_BreedingPopulation.R
+#Title           :Plot_Fst_distribution_FigS3.R 
+#Description     :make histograms of Fst distributions as in Figure S3
+#Author		 	 :A. Poets 
+#========================================================================================
+
+#Input files are the resutls from Fst_six_two_row.R, Fst_winter_spring.R, Fst_BreedingPopulation.R
 
 rm(list=ls())
 

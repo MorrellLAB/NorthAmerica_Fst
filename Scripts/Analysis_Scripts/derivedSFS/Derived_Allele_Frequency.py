@@ -1,7 +1,13 @@
 #!/usr/bin/env python
-"""Calculates derived allele frequecy, using the H. bulbosum states of the BOPA
-SNPs listed in Fang et al. 2014 in G3 (Table S3). Sites that are trans-specific
-between barley and H. bulbosum are ignored."""
+"""
+Title           :Derived_Allele_Frequency.py  
+Description     :Calculates derived allele frequecy, using the H. bulbosum states of the BOPA
+				SNPs listed in Fang et al. 2014 in G3 (Table S3). Sites that are trans-specific
+				between barley and H. bulbosum are ignored.
+Author		 	:T. Kono
+
+Usage: Derived_Allele_Frequency.py TableS3_fang2014.txt Genotypes_matrix.txt
+"""
 
 import sys
 

@@ -1,9 +1,17 @@
-#Input for Shichen's PHS, analysis based on genome-wide haplotype sharing levels.
+#Title           :Step1_PHS_input.R 
+#Description     :Input to estimate pairwise-haplotype sharing compared to genome-wide similarity.
+#				  We make use of Shichen Wang's code calculate_PHS_GW.pl to estimate PHS.
+#Author		 	 :A. Poets 
+#Note		     :Requires diploid phased genotypes
+#========================================================================================
+
 rm(list=ls())
 
 #INPUT FILES: In Datasets directory unless indcated otherwise
+Samples_info<-read.table("samples_information.txt",header=T)
+genmap<-read.table("GeneticMap_T3_020315",header=T)
 
-#Genotype data after running the Phasing pipeline. Use phased heterozygotes, NA for missing data.
+#Input:Genotype data after running the Phasing pipeline. Use phased heterozygotes, NA for missing data.
 #Put all chromosomes together as we are going to do a Genome-wide PHS analysis
 CHR1<-read.table("~/final_Phased_diploid_wNA/NorthAm_phased_chr1.txt",header=T,row.names=1)
 CHR2<-read.table("~/final_Phased_diploid_wNA/NorthAm_phased_chr2.txt",header=T,row.names=1)
@@ -17,10 +25,7 @@ NorthAm<-cbind(as.data.frame(CHR1),as.data.frame(CHR2),as.data.frame(CHR3),as.da
 
 
 ##Divide by 16 populations
-
 #First we need to double the Samples information file
-Samples_info<-read.table("samples_information.txt",header=T)
-
 Samples_info_2<-cbind(paste(Samples_info$Alias,"_2",sep=""),as.data.frame(Samples_info[,2:5]))
 colnames(Samples_info_2)<-colnames(Samples_info)
 
@@ -74,9 +79,6 @@ for (p in 1:length(PARTITIONS)){
 }
 
 #Get Genetic map for all the SNPs in the phased dataset
-
-genmap<-read.table("GeneticMap_T3_020315",header=T)
-
 NorthAm_genmap<-genmap[(genmap$SNP %in% colnames(NorthAm)),]
 
 #Order columns: chr_id SNP_name and genetic_distance (no cummulative)

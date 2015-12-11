@@ -1,9 +1,12 @@
 #!/usr/bin/env python
-"""A script to trim down a Hudson SNP Table to the desired samples. Also has 
-the option to reorder samples for input into Thornton's libsequence programs.
-Takes two files as input: the table, and a file with sample names, one name 
-per line. Comments (#) are interpreted as blank lines.
-
+"""
+Title           :Format_HTable.py
+Description     :A script to trim down a Hudson SNP Table to the desired samples. Also has 
+				the option to reorder samples for input into Thornton's libsequence programs.
+Author		 	:T. Kono
+Note			:Takes two files as input: the table, and a file with sample names, one name 
+				per line. Comments (#) are interpreted as blank lines.
+========================================================================================
 """
 
 import sys

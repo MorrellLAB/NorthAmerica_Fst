@@ -1,8 +1,15 @@
 #!/usr/bin/env python
-"""A script that uses a tab-delimited file and a reference assembly to extract
-homologous base calls for pre-defined positions. The tab-delimited file
-describes the positions to extract in BED-like format, and the reference
-assemblies contain the sequence. Requires Biopython."""
+
+"""
+Title           :Get_9K_Bulbosum_States.py
+Description     :A script that uses a tab-delimited file and a reference assembly to extract
+				homologous base calls for pre-defined positions. The tab-delimited file
+				describes the positions to extract in BED-like format, and the reference
+				assemblies contain the sequence.
+Author		 	:T. Kono
+Note			:Requires Biopython
+========================================================================================
+"""
 
 import sys
 from Bio import SeqIO

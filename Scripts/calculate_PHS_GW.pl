@@ -4,11 +4,14 @@ use strict;
 die <<END unless @ARGV >= 3;
 
  *******************************************************************************************************************************
-  Author: wangsc\@ksu.edu
-  This script will calcualte the haplotype share statistics (PHS) as reported in the paper:																				
+  Author: Shichen Wang
+  Email:  wangsc\@ksu.edu
+  
+  Description: This script will calcualte the haplotype share statistics (PHS) as reported in the paper:																				
   A Nonparametric test reveals selection for rapid flowering in the arabidopsis genome, Christopher T et al, PLoS Biology 2006.
- 
-  Jun.29.2013 by SW:
+  
+  Date: Jun.29.2013 
+  
   Modified from calcualte_PHS_v3.pl, to calcualte the mean and sd of the length of shared haplotype from all chromosmes.
   
   Bug fixed on 08.08.2013, SW

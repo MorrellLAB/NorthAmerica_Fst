@@ -1,6 +1,9 @@
-#PLOT PHS RESULTS 
+#Title           :Plot_PHS_all_pops_Segments_FigS8_TableS9.R
+#Description     :Plot PHS results (Figure S8) and creates summary table (Table S9)
+#Author		 	 :A. Poets
+#Note			 :Input file comes from Step2_PHS_output.R
+#========================================================================================
 
-#Plot results after Step2_PHS_output.R was ran.
 
 rm(list=ls())
 

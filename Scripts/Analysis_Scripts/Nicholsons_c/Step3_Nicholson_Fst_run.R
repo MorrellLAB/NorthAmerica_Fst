@@ -1,4 +1,9 @@
-#Analysis after Running Step1_PED_data_generation.R and  Step2_Make_Nicholson_FST_Inputs.py  
+#Title           :Step3_Nicholson_Fst_run.R
+#Description     :Calculate Nicolson's Fst (referred as 'c')
+#Author		 	 :A. Poets
+#Date			 :May 22, 2015
+#Note		     :Requires input from Step2_Make_Nicholson_FST_Inputs.py
+#========================================================================================
  
 # Get Fst genome-wide (global)
 

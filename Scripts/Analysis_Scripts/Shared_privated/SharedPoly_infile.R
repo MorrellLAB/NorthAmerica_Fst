@@ -1,5 +1,11 @@
-rm(list=ls())
+#Title           :SharedPoly_infile.R 
+#Description     :Fortmat input files for sharedPoly (libsequence package) to calculate number 
+# 				   of private markers at each breeding population
+#Author		 	 :A. Poets 
+#Note		     :Input file has new aliases names
+#========================================================================================
 
+rm(list=ls())
 
 ##INPUT FILES: from Datasets directory.
 DATA<-read.table("Barley_NorthAm_QC_AB_no_duplicates_or.txt",header=T,row.names=1)

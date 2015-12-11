@@ -1,10 +1,11 @@
-#   R script to separate the large genotyping matrix into individual files,
-#   based on breeding program and row type
-#       Thomas Kono
-#       April 16, 2015
-#       Saint Paul, MN
+#Title           :Separate_BP_RT.R
+#Description     :Separate the large genotyping matrix into individual files,
+#  				 based on breeding program and row type
+#Author		 	 :T. Kono
+#Date			 :April 16, 2015
+#Note			 :Requires diploid calls
+#========================================================================================
 
-#   Note: Requires diploid calls
 
 #   What is missing data called in our data frame?
 missing <- "NA"

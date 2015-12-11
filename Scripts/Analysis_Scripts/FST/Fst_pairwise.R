@@ -1,4 +1,9 @@
-#This code calculate Fst comparing all populations to each other in a pairwise manner
+#Title           :Fst_pairwise.R
+#Description     :Calculate Fst comparing all populations to each other in a pairwise manner
+#Author		 	 :A. Poets
+#Date			 :May 22, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
 
 rm(list=ls())
 library(gtools)

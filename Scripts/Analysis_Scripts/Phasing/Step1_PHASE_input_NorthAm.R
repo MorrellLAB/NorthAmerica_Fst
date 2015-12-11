@@ -1,11 +1,18 @@
+#Title           :Step1_PHASE_input_NorthAm.R
+#Description     :Format files for fastPhase (Scheet and Stephens 2006).
+#Author		 	 :A. Poets
+#Date			 :May 22, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
+
 rm(list=ls())
 
-NorthAm<-read.table("~/Documents/Anita/mohsen_fst/Data/t3_download_04272015/ANA_names_Barley_NorthAm_QC_AB_no_duplicates_or.txt",header=T,row.names=1)
+NorthAm<-read.table("Barley_NorthAm_QC_AB_no_duplicates_or.txt",header=T,row.names=1)
 
 
 #Identify how many of those SNPs have genetic position
 
-genmap<-read.table("~/Documents/Anita/mohsen_fst/Data/t3_download_04272015/GeneticMap_T3_020315",header=T)
+genmap<-read.table("GeneticMap_T3_020315",header=T)
 
 head(genmap)
 
@@ -103,19 +110,17 @@ dir.create("~/prephase_files")
 for (i in 1:7) {
 	INPUT<-get(paste("DOUBLED_DATA_or_chr",i,sep=""))
 	OUTPUT<-paste("~/prephase_files/NorthAm_prephase_chr_",i,".txt",sep="")
-
-write.table(INPUT,OUTPUT,quote=F,row.names=T,col.names=T,sep="\t")
+	
+	#Fortmat header for fastPHASE
+	HEADER<-as.data.frame(c(dim(INPUT)[1],dim(INPUT)[2]))
+	PS<-as.data.frame(t(c("P",rep('S',(dim(INPUT)[2])))))
+	NumSNP<-as.data.frame(t(c(1:(dim(INPUT)[2]))))
+	write.table(HEADER,OUTPUT,quote=F,row.names=F,col.names=F,sep="\t")
+	write.table(PS,OUTPUT,quote=F,row.names=F,col.names=F,sep=" ",append=TRUE)
+	write.table(NumSNP,OUTPUT,quote=F,row.names=F,col.names=F,sep=" ",append=TRUE)
+	write.table(INPUT,OUTPUT,quote=F,row.names=T,col.names=F,sep="\t",append=TRUE)
 }
 
 ##Now take the output and run Step2_New_make_fasta_NorthAme.pl to create input for fastPhase
 # $ Step2_New_make_fasta_NorthAme.pl NorthAm_prephase_chr_1.txt >./INPUT_NorthAm_chr1.txt
-
-#Add header to INPUT_NorthAm_chr
-#Add Sample number, SNP number, a row of P SSSSSS , and a row of SNP positions
-#number of SNPs in chromosome
-n<-(dim(Chr1)[2])
-ADDITIONAL<-rbind(c(1:n),rep("S",n))
-
-write.table(ADDITIONAL,"~/Desktop/Temp_head.txt",quote=F,row.names=F,col.names=F,sep="\t")
-
 #Now run fastPhase using the complete INPUT_NorthAm_chr . One chromsome at the time.

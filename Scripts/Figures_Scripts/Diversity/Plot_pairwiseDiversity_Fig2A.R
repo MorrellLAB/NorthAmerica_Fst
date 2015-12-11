@@ -1,3 +1,8 @@
+#Title           :Plot_pairwiseDiversity_Fig2A.R 
+#Description     :Plot genome-wide diversity as in Figure 2A
+#Author		 	 :A. Poets 
+#========================================================================================
+
 rm(list=ls())
 
 ##INPUT FILES: BCAP_FST_Stats.txt is a summary table diversity at each population. The values come from the FIS pipeline and Per_SNP_PairwiseDiversity.R

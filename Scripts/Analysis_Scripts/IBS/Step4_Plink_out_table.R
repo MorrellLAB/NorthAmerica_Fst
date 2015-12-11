@@ -1,4 +1,9 @@
-#After running Plink create a table quantifiying the frequency of shared alleles at a given window between two populations.
+#Title           :Step4_Plink_out_table.R
+#Description     :Creates a table quantifiying the frequency of shared alleles at a given window between two populations
+#Author		 	 :A. Poets
+#Date			 :Jun 26, 2015
+#Note		     :Requires output files from Step3_Plink_IBS_OUT.sh
+#========================================================================================
 
 rm(list=ls())
 

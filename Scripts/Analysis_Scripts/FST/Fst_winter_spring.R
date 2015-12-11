@@ -1,4 +1,10 @@
-#This code will calculate Fst between Spring and Winter barley
+#Title           :Fst_winter_spring.R
+#Description     :Calculate Fst between Growth Habit types
+#Author		 	 :A. Poets
+#Date			 :May 22, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
+
 
 rm(list=ls())
 library(gtools)

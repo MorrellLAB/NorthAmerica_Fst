@@ -1,4 +1,12 @@
-#Create input files for smpartPCA. Using the ancestrymap format:
+#Title           :Step1_SmartPCA_inputfile.R
+#Description     :Format files for SmartPCA using ancestrymap format (Patterson et al, 2006)(see SmartPCA manual 
+#			      for more information about formats)
+#Author		 	 :A. Poets
+#Date			 :May 22, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
+
+#Here will be:
 # Use minor allele as the reference allele
 # Set gender to "U" Unknown 
 # Set population group as 1 for all, to have an independent result from Structure. We don't have case/controls

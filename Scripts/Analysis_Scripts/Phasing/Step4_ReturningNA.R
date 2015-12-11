@@ -1,4 +1,10 @@
-#Script to replace IMPUTED missing values with 'NA'
+#Title           :Step4_ReturningNA.R 
+#Description     :By default fastPHASE imputes missing data. Here we convert imputed values 
+#				  back to missing.
+#Author		 	 :A. Poets 
+#Note		     :Requires output from Step3_Processing_output.sh
+#========================================================================================
+
 #The input file is the product of Step3. 
 rm(list=ls())
 

@@ -1,4 +1,10 @@
-#After runing Step1_IBS_input_PEDfiles.R 
+#Title           :Step1_IBS_input_PEDfiles.R
+#Description     :Format input files for Plink by chromosome windows
+#Author		 	 :A. Poets
+#Date			 :Jun 26, 2015
+#Note		     :Requires output files from Step1_IBS_input_PEDfiles.R
+#========================================================================================
+
 #THIS CODE WILL:
 #1. Remove the SNPs at the end of each chromosome that can not be devided in 20 (20SNP windows)
 #2. Create new map files with only the remaining SNPs

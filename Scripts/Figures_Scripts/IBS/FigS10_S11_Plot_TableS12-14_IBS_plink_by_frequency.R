@@ -1,4 +1,10 @@
-#Plot IBS from plink. Input file comes from Step4.
+#Title           :FigS10_S11_Plot_TableS12-14_IBS_plink_by_frequency.R 
+#Description     :Plot IBS from Plink output as in Figures S10 and S11.
+#				  Make tables of IBS frequency (Tables S12-S14)
+#Author		 	 :A. Poets 
+#Note		 	 :Input file comes from Step4_Plink_out_table.R	
+#========================================================================================
+
 # Use one population as base line. The Y-axis would be the frequency of shared individuals with other Breeding population evaluated. 
 #The thick of the bar for the other programs indicate which frequency of individuals of that program share with the base population.
 

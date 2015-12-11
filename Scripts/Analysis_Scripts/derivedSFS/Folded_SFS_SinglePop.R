@@ -1,4 +1,7 @@
-#   Create a folded SFS
+#title           :Folded_SFS_SinglePop.R  
+#description     :Create a folded SFS.
+#author		 :T. Kono
+#========================================================================
 
 #   What is the missing data value?
 missing <- "NN"

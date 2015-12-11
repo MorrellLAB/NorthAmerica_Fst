@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
-#   Takes the tab-delimited text file provided by Ana (without headers)
-#   and builds a Hudson-like polymorphism table
+"""
+Title           :Build_HudsonTable.py
+Description     :Takes the tab-delimited text file (samples in rows, markers in columns) without headers,
+				 and builds a Hudson-like polymorphism table
+Author		 	 :T. Kono
+
+========================================================================================
+"""
 
 import sys
 

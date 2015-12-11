@@ -1,8 +1,15 @@
 #!/usr/bin/env python
-"""A script to generate input files for the Nicholson 2002 FST estimator, as
-implemented in the R `popgen' package. This assumes PLINK input file formats.
-It acceps a .PED and a .CLST file for genotyping information and cluster
-membership. """
+"""
+Title           :Step2_Make_Nicholson_FST_Inputs.py
+Description     :CA script to generate input files for the Nicholson 2002 FST estimator, as
+				 implemented in the R `popgen' package. 
+Author		 	 :T. Kono
+Date			 :May 8, 2015
+Note		     :This assumes PLINK input file formats.
+				 It acceps a .PED and a .CLST file for genotyping information and cluster
+				 membership.
+========================================================================================
+"""
 
 import argparse
 

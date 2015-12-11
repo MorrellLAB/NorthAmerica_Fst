@@ -1,7 +1,12 @@
-#   Script to calculate per-SNP pairwise diversity and and plot it in order
-#   of a genetic map. libsequence-based tools (at least for the pairwise
-#   diversity calculations) remove missing sites and then calculate on the
-#   remaining bases. We will implement the same methodology here.
+#Title           :Per_SNP_PairwiseDiversity.R 
+#Description     :Script to calculate per-SNP pairwise diversity and and plot it in order
+#   			 of a genetic map. libsequence-based tools (at least for the pairwise
+#  				 diversity calculations) remove missing sites and then calculate on the
+#  				 remaining bases. We will implement the same methodology here.
+#Author		 	 :T. Kono
+
+#========================================================================================
+
 
 #   Take arguments
 args <- commandArgs(TRUE)

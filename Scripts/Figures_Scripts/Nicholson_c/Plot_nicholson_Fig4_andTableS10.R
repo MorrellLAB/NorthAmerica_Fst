@@ -1,5 +1,7 @@
-
-
+#Title           :Plot_nicholson_Fig4_andTableS10.R 
+#Description     :Plot distribution of c values in two- and six-rowed barley, as shown in figure S10
+#Author		 	 :A. Poets
+#===================================================================================================
 rm<-list(ls())
 
 ##For Spring 6 row

@@ -1,5 +1,8 @@
-#   Create a folded SFS of two different filtering criteria to explor why the
-#   numbers for average pairwise diversity change so much.
+#title           :Folded_SFS.R  
+#description     :Create a folded SFS of two different filtering criteria to 
+#				  explore why the numbers for average pairwise diversity change so much.
+#author		 	 :T. Kono
+#========================================================================================
 
 #   What is the missing data value?
 missing <- "NN"

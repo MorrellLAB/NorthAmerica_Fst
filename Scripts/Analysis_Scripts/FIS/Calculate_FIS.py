@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
-#   Calculates FIS as 1 - (Ho/He)
-#   Takes one argument: a matrix of genotype data
-#   Individuals are rows, markers are columns
+"""
+Title           :Calculate_FIS.py  
+Description     :Calculates FIS as 1 - (Ho/He)
+Author		 	 :T. Kono
+Notes		     :Takes one argument: a matrix of genotype data
+  		 	 	 Individuals are rows, markers are columns
+========================================================================================
+
+"""
 
 import sys
 

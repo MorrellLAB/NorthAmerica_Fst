@@ -1,4 +1,8 @@
-###Estimate and plot (Figure S4) derived SFS and joint two SFS comparing spike types or growth habit types.
+#Title           :JointSFS_FigureS4.R 
+#Description     :Estimating and plotting a joint SFS comparing spike types or growth habit types as shown in figure S4
+#Author		 	 :Z. Fang
+#========================================================================================
+
 
 rm(list=ls())
 

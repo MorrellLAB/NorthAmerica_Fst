@@ -1,7 +1,8 @@
-#Plot treeMix results
-#output names without suffix
-
-#Figure 6 and S12.
+#Title           :Plot_treeMix_Fig6_FigS12.R
+#Description     :Plot tree topology and plot of residuals as in Figures 6 and S12
+#Author		 	 :A. Poets
+#Note			 :Requires source code plotting_funcs.R from TreeMix package (Pickrell and Pritchard 2012) 
+#========================================================================================
 
 #Source code from the treeMix package
 source("plotting_funcs.R")

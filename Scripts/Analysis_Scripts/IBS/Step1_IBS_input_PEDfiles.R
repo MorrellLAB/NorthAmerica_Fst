@@ -1,3 +1,10 @@
+#Title           :Step1_IBS_input_PEDfiles.R
+#Description     :Format input files for Plink genome-wide
+#Author		 	 :A. Poets
+#Date			 :Jun 26, 2015
+#Note		     :Requires diploid phased genotypes
+#========================================================================================
+
 rm(list=ls())
 
 ##INPUT FILES: from Datasets directory and Phased genotypes

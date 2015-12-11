@@ -1,10 +1,11 @@
-#   R script to calculate per-breeding program and per-row type inbreeding
-#   coefficients for the Barley CAP FST project
-#   Thomas Kono
-#       Jan 23 2015
-#       Saint Paul, MN
+#Title           :FIS_BP_RT.R  
+#Description     :R script to calculate per-breeding program and per-row type inbreeding
+#   			  coefficients for the Barley CAP FST project
+#Author		 	 :T. Kono
+#Date			 :Jan 23 2015
+#Note		     :Requires diploid calls 
+#========================================================================================
 
-#   Note: Requires diploid calls
 
 #   What is missing data called in our data frame?
 missing <- "NA"

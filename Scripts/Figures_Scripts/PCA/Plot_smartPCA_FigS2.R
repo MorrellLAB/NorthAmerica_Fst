@@ -1,3 +1,8 @@
+#Title           :Plot_smartPCA_FigS2.R
+#Description     :Population structure by PCA. Plot PC1 vs PC2, as shown in figure S2
+#Author		 	 :A. Poets
+#========================================================================================
+
 rm(list=ls())
 
 #Calculate percentage of variance explained

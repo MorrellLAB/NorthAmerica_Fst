@@ -1,9 +1,17 @@
 #!/usr/bin/evn python
-#   Script to convert a Hudson-like polymorphism table to a FASTA file for
-#   input into 'compute' (libsequence)
-#   The input file format does not have a typical Htable header, and is a 
-#   matrix of genotyping data, so we also have to filter on monomorphic
-#   markers.
+
+"""
+Title           :PolyTable_to_Fasta.py
+Description     :Script to convert a Hudson-like polymorphism table to a FASTA file for
+				input into 'compute' (libsequence)
+				The input file format does not have a typical Htable header, and is a 
+				matrix of genotyping data, so we also have to filter on monomorphic
+				markers.
+Author		 	:T. Kono
+
+========================================================================================
+"""
+
 
 import sys
 

@@ -1,4 +1,10 @@
-#This code will calculate Fst between Row Type
+#Title           :Fst_six_two_row.R
+#Description     :Calculate Fst between Spike types
+#Author		 	 :A. Poets
+#Date			 :May 22, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
+
 
 rm(list=ls())
 library(gtools)

@@ -1,4 +1,10 @@
-#This code will calculate Fst among breeding populations
+#Title           :Fst_BreedingPopulation.R
+#Description     :Calculate Fst among breeding populations
+#Author		 	 :A. Poets
+#Date			 :May 20, 2015
+#Note		     :Requires diploid genotypes
+#========================================================================================
+
 rm(list=ls())
 library(gtools)
 library(hierfstat)

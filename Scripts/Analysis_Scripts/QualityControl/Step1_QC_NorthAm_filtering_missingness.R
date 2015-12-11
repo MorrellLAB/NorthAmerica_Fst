@@ -1,4 +1,10 @@
-#This script will remove SNPs and Samples exceeding 25% missingess and monomorphic SNPs. (Didn't use the heterozygosity filter)
+#Title           :Step1_QC_NorthAm_filtering_missingness.R 
+#Description     :Remove SNPs and Samples exceeding 25% missingess and monomorphic SNPs.
+#Author		 	 :A. Poets 
+#Note		     :Input file is a matrix (column=SNP, row=Samples) downloaded from www.triticeaetoolbox.org
+				  For both, nucleotide and genotype calls.
+#==========================================================================================================
+
 
 # remove all existing files
 rm(list = ls())

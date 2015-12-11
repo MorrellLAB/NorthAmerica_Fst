@@ -1,7 +1,12 @@
-#PLOT PHS RESULTS AFTER RUNNING calculate_PHS_GW.pl 
+#Title           :Step2_PHS_output.R 
+#Description     :Process PHS results.
+#Author		 	 :A. Poets 
+#Note		     :Requires output from calculate_PHS_GW.pl
+#========================================================================================
+ 
 rm(list=ls())
 
-##INPUT FILE:
+##INPUT FILES:
 Annotations<-read.csv("Barley_Annotations.txt",sep="\t",header=T)
 #Table generated from Step1_PHS_input.R
 SNP_cumulPosition<-read.table("All_genetic_distances_forPlot.txt",header=T)
@@ -136,14 +141,12 @@ for (i in 1:(dim(breeding_program)[1])){
 
 	###Put together all the Significant_a for all pops , and another file the significant for b allele.
 	
-	
-	
 	All_pops_a <-rbind(as.data.frame(SIGNIFICANT_AB2_a),as.data.frame(SIGNIFICANT_AB6_a),as.data.frame(SIGNIFICANT_BA2_a),as.data.frame(SIGNIFICANT_BA6_a),as.data.frame(SIGNIFICANT_BAI2_a),as.data.frame(SIGNIFICANT_MN6_a),as.data.frame(SIGNIFICANT_MT2_a),as.data.frame(SIGNIFICANT_N2_a),as.data.frame(SIGNIFICANT_N6_a),as.data.frame(SIGNIFICANT_OR2_a),as.data.frame(SIGNIFICANT_OR6_a),as.data.frame(SIGNIFICANT_UT2_a),as.data.frame(SIGNIFICANT_UT6_a),as.data.frame(SIGNIFICANT_VT6_a),as.data.frame(SIGNIFICANT_WA2_a),as.data.frame(SIGNIFICANT_WA6_a))
 	
 	
 	All_pops_b <-rbind(as.data.frame(SIGNIFICANT_AB2_b),as.data.frame(SIGNIFICANT_AB6_b),as.data.frame(SIGNIFICANT_BA2_b),as.data.frame(SIGNIFICANT_BA6_b),as.data.frame(SIGNIFICANT_BAI2_b),as.data.frame(SIGNIFICANT_MN6_b),as.data.frame(SIGNIFICANT_MT2_b),as.data.frame(SIGNIFICANT_N2_b),as.data.frame(SIGNIFICANT_N6_b),as.data.frame(SIGNIFICANT_OR2_b),as.data.frame(SIGNIFICANT_OR6_b),as.data.frame(SIGNIFICANT_UT2_b),as.data.frame(SIGNIFICANT_UT6_b),as.data.frame(SIGNIFICANT_VT6_b),as.data.frame(SIGNIFICANT_WA2_b),as.data.frame(SIGNIFICANT_WA6_b))
 	
-	#There was some problem with the output looking like a list, so i use the lapply to coarse into a data frame
+	#coarse into a data frame
 	All_pops_a_2 <- data.frame(lapply(All_pops_a, as.character), stringsAsFactors=FALSE)
 	All_pops_b_2 <- data.frame(lapply(All_pops_b, as.character), stringsAsFactors=FALSE)
 	write.table(All_pops_a_2,"Allele_A_all_16_pops.txt",col.names=T,row.names=F,quote=F,sep="\t")

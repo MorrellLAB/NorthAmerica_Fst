@@ -8,4 +8,15 @@ Specific code for [figures](Figures_Scripts) in the paper can be found in the Fi
 
 Additional Script borrowed
 ---------------------------
-calculate_PHS_GW.pl : Script to calculate pairwise haplotype sharing by comparing to genome-wide similarity between samples. This was kindly shared by Shichen Wang.
+calculate_PHS_GW.pl : Script to calculate pairwise haplotype sharing by comparing to genome-wide similarity between samples. 
+This was kindly shared by Shichen Wang (shichen.wang@gmail.com).
+
+Contact Us
+-----------
+
+For questions about any piece of code please contact the author:
+
+
+A. Poets - agonzale@umn.edu
+T. Kono  - konox006@umn.edu
+Z. Fang  - fang0157@umn.edu 

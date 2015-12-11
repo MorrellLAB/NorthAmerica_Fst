@@ -1,4 +1,11 @@
-#This script will select one sample representing multiple nearly identical genotypes (1% diff)
+#Title           :Step3_QC_remove_rep_dupl_and_hete.R 
+#Description     :Remove duplicated genotypes (<1% difference) and accessions with 
+#				  >6.25% heterozygosity.
+#Author		 	 :A. Poets 
+#Note		     :Input file has new aliases names
+#========================================================================================
+
+
 # Select samples with more genotypes out of each group of duplicates
 # Print tables showing the samples that needed to be removed due to duplication
 # Remove accessions with >6.25% heterozygosity
