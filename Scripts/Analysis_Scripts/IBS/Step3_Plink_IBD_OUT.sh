@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
 #PBS -l mem=1000mb,nodes=1:ppn=1,walltime=72:00:00
 #PBS -m abe
 
@@ -7,13 +12,13 @@ DIR=~/50_SNPs
 #Create directory where to put only perfect matches files
 mkdir $DIR/Analysis
 
-cd $DIR/output
+cd $DIR/output || exit
 cat $DIR/List_gral.txt | while read line
 do
 
-SEGMENT=`echo $line`
+SEGMENT=$(echo $line)
 
-gunzip -c ${SEGMENT}out.genome.gz | awk '$12 == "1.0000" {print $0}' >$DIR/Analysis/${SEGMENT}_perfectMatch.txt
+gunzip -c "${SEGMENT}out.genome.gz" | awk '$12 == "1.0000" {print $0}' >"$DIR/Analysis/${SEGMENT}_perfectMatch.txt"
 
 done
 
