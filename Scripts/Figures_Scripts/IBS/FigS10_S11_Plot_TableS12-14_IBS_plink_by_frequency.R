@@ -74,7 +74,7 @@ for (p in 1:length(SHARED)){
 	plot (c(0.31,1108.97),c(0.001,0.001),col="white",cex=0.05,pch=1,ylim=c(0,1),ylab= (paste("Frequency of IBS segments in ",legend_table[POPULATION,2],sep="")),xlab="Linkage Group",xaxt="n")
 	
 	par(lend=1)
-legend(1160,1.04,lwd=c(1:10),c(">0<0.1","0.1<0.2","0.2<0.3","0.3<0.4","0.4<0.5","0.5<0.6","0.6<0.7","0.7<0.8","0.8<0.9","0.9-0.1"),title=expression(bold("Frequency")),cex=0.9,xpd=T)
+legend(1160,1.04,lwd=c(1:10),c("(0,0.1)","[0.1,0.2)","[0.2,0.3)","[0.3,0.4)","[0.4,0.5)","[0.5,0.6)","[0.6,0.7)","[0.7,0.8)","[0.8,0.9)","[0.9-1.0)"),title=expression(bold("Frequency")),cex=0.9,xpd=T)
 	
 	#Define linkage groups 
 	abline(v=c(140,313,496.13,640,830,972),lty=2,xpd=F)
